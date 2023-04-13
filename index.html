@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <button onclick="copyToClipboard()">Копіювати текст</button>
+    <script>
+  function copyToClipboard() {
+    const selection = window.getSelection().toString();
+    const el = document.createElement('textarea');
+    el.value = selection;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert('Текст успішно скопійовано!');
+  }
+</script>
+</body>
+</html>
